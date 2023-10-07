@@ -1,13 +1,13 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Itim', cursive;
+    font-family: Georgia, serif;
 }
 
 .background {
     background-color: #12181B;
     height: 100vh;
-    padding-top: 1px;
+    padding-top: 3px;
 }
 
 .title {
@@ -50,11 +50,11 @@
 }
 
 .playerX {
-    color: #09C372;
+    color: #71f0b9;
 }
 
 .playerO {
-    color: #498AFB;
+    color: #82acf3;
 }
 
 .controls {
@@ -66,19 +66,19 @@
 }
 
 .controls button {
-    color: white;
+    color: rgb(139, 136, 136);
     padding: 8px;
     border-radius: 8px;
     border: none;
-    font-size: 20px;
+    font-size: 25px;
     margin-left: 1em;
     cursor: pointer;
 }
 
 .restart {
-    background-color: #498AFB;
+    background-color: #075ef5;
 }
 
 #reset {
-    background-color: #FF3860;
+    background-color: #b62a46;
 }

@@ -1,5 +1,6 @@
 import Board from "./Board";
 import { useState, useEffect } from "react";
+import GameOver from "./GameOver";
 const PLAYER_X= "x";
 const PLAYER_O="o";
 const winningCombination=[
@@ -17,6 +18,9 @@ function checkWinner(tiles, setStrikeClass){
        const tileValue1=tiles[combo[0]]
        const tileValue2=tiles[combo[1]]
        const tileValue3=tiles[combo[2]]
+       if(tileValue1!==null && tileValue1===tileValue2 && tileValue1===tileValue3){
+        setStrikeClass(strikeClass);
+       }
     }
 }
 function TicTacToe(){
@@ -44,6 +48,7 @@ function TicTacToe(){
         <div>
             <h1>TicTacToe</h1>
             <Board playerTurn={playerTurn} tiles={tiles} onTileClick={handleTileClick} strikeClass={strikeClass} />
+            <GameOver/>
         </div>
     )
     };

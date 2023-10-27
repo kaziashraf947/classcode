@@ -1,18 +1,29 @@
 import Board from "./Board";
 import { useState } from "react";
-const Player_x= "x";
-const PLayer_o="o";
+const PLAYER_X= "x";
+const PLAYER_O="o";
 function TicTacToe(){
     const [tiles, setTiles] = useState(Array(9).fill(null));
-    const [playerTurn, setPlayerTurn]= useState(Player_x);
+    let [playerTurn, setPlayerTurn]= useState(PLAYER_X);
     const handleTileClick=(index)=>{
-        console.log(index);
+        if(tiles[index]!==null){
+            return;
+        }
+        const newTiles = [...tiles];
+    newTiles[index] = playerTurn;
+    setTiles(newTiles);
+    if (playerTurn === PLAYER_X) {
+      setPlayerTurn(PLAYER_O);
+    } else {
+      setPlayerTurn(PLAYER_X);
     }
+};
     return(
         <div>
             <h1>TicTacToe</h1>
-            <Board tiles={tiles} onTileClick={handleTileClick}/>
+            <Board playerTurn={playerTurn} tiles={tiles} onTileClick={handleTileClick}/>
         </div>
     )
-}
+    };
+
 export default TicTacToe;

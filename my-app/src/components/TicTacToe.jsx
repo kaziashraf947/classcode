@@ -60,6 +60,12 @@ function TicTacToe(){
       setPlayerTurn(PLAYER_X);
     }
 };
+    const handleReset=()=>{
+        setGameState(GameState.inProgress);
+        setTiles(Array(9).fill(null));
+        setPlayerTurn(PLAYER_X);
+        setStrikeClass(null);
+    }
  useEffect(()=>{
     checkWinner(tiles, setStrikeClass, setGameState);
 },[tiles])
@@ -68,7 +74,7 @@ function TicTacToe(){
             <h1>TicTacToe</h1>
             <Board playerTurn={playerTurn} tiles={tiles} onTileClick={handleTileClick} strikeClass={strikeClass} />
             <GameOver gameState={gameState}/>
-            <Reset/>
+            <Reset gameState={gameState} onReset={handleReset}/>
         </div>
     )
     };

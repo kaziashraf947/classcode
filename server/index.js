@@ -1,8 +1,8 @@
 const express = require('express')
 const path = require('path')
-```javascript
+
 const app = express();
-```
+
 const PORT = 3000
 const clientPath = path.resolve(__dirname, '../client/dist')
 app.use(express.static(clientPath))
